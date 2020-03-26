@@ -1,0 +1,25 @@
+<!--主盒子-->
+<import src="../public.wxml"/>
+<view class="container">
+  <!--左侧栏-->
+  <view class="nav_left">
+    <view class="block_item" wx:for="{{office}}" wx:key="{{index}}">
+      <view class="nav_left_items {{curIndex == index ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}">{{item.name}}</view>
+    </view>
+  </view>
+  <!--右侧栏-->
+  <view class="nav_right">
+    <!--如果有数据，才遍历项-->
+      <block wx:for="{{doctor}}" wx:key="{{index}}">
+        <view class="nav_right_items" wx:if="{{doctor[index].office==office[curIndex].name}}">
+        <!--界面跳转 -->
+          <navigator url="../doctor/doctor?doctorId={{doctor[index]._id}}">
+            <image src="../../images/1.png"></image>
+            <text>{{item.name}}</text>
+            <text>{{item.level}}</text>
+          </navigator>
+        </view>
+      </block>
+  </view>
+</view>
+<template is="foot"/>

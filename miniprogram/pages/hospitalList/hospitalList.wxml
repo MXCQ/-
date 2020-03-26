@@ -1,0 +1,15 @@
+<import src="../public.wxml"/>
+<view class="index">
+  <view class="kind-list-item">
+    <block wx:for-items="{{todoList}}" wx:key="{{item._id}}">
+          <navigator url="../hospital/hospital?hospitalId={{item._id}}" class="index-bd">
+            <image class='index-logo' src="../../images/wechat.png"></image>
+            <view class="kind-list-text">名称：{{item.name}}</view>
+            <view class="kind-list-text">地址：{{item.address}}</view>
+            <view class="kind-list-text">级别：{{item.level}}</view>
+            <scroll-view scroll-y="true" class="kind-list-img">简介：{{item.information}}</scroll-view>
+          </navigator>
+    </block>
+  </view>
+</view>
+<template is="foot"/>

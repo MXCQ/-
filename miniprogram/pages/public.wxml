@@ -1,0 +1,21 @@
+<!--public.wxml-->
+<template name="foot">
+  <view style="width:100%;height:5em;"></view>
+  <view class="foot">
+   <navigator url="/pages/index/index" class="foot_btn index" hover-class="none" open-type="reLaunch">首页</navigator>
+    <button open-type="contact" class="foot_btn kswz" >快速问诊</button>
+    <navigator url="/pages/personal/personal" class="foot_btn grzx" hover-class="none" open-type="reLaunch">个人中心</navigator>
+  </view>
+</template>
+<template name="hospitalinfo">
+  <view class="hospitalinfo">
+    <view class="h-i-left">
+      <view class="tel" bindtap="onMakePhone">咨询热线：0313-6666666</view>
+      <view class="address">地址：北京市昌平区府学路18号</view>
+      <view class="jztime">工作时间：周一至周六 9：00-21：00</view>
+    </view>
+    <view class="h-i-right">
+      <image mode="aspectFill" src="images/1.png" class="slide-image" ></image>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/doctorList/doctorList",
+    "pages/doctor/doctor",
+    "pages/hospitalList/hospitalList",
+    "pages/hospital/hospital",
+    "pages/officeList/officeList",
+    "pages/personal/personal"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "预约预约",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

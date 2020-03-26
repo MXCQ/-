@@ -1,0 +1,17 @@
+<view class="index">
+<import src="../public.wxml"/>
+  <view class="index-hd">
+    <textarea></textarea>
+  </view>
+  <view class="kind-list-item">
+    <block wx:for-items="{{todoList}}" wx:key="{{item._id}}">
+          <navigator url="../doctor/doctor?doctorId={{item._id}}" class="">
+            <image class="kind-list-img" src="../../images/wechat.png"></image>
+            <view class="index-bd">姓名：{{item.name}}</view>
+            <view class="index-bd">专长：{{item.major}}</view>
+            <view class="index-bd">所属医院：{{item.hospital}}</view>
+          </navigator>
+    </block>
+  </view>
+  <template is="foot"/>
+</view>

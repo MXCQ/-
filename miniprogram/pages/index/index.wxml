@@ -1,0 +1,46 @@
+<!--index.wxml-->
+<view class="container">
+  <import src="/pages/public.wxml"/>
+  <!--banner end-->
+  <view class="matrix">
+    <button open-type="contact" class="nav-btn active" hover-class="nav-hover">
+      <view class="matrix-btn kswz">
+        <icon class="kswz"/>
+        <view class="title">快速问诊</view>
+        <view class="info">足不出户 咨询专家</view>
+      </view>
+    </button>
+    <navigator url="/pages/doctorList/doctorList" open-type="navigate" class="nav-btn active" hover-class="nav-hover">
+      <view class="matrix-btn yygh">
+        <icon class="yygh"/>
+        <view class="title">医师挂号</view>
+        <view class="info">专家直约 快速挂号</view>
+      </view>
+    </navigator>
+    <navigator url="/pages/hospitalList/hospitalList" open-type="navigate" class="nav-btn active" hover-class="nav-hover">
+      <view class="matrix-btn gtpp">
+        <icon class="gtpp"/>
+        <view class="title">医院挂号</view>
+        <view class="info">厚积薄发 开物成务</view>
+      </view>
+    </navigator>
+    <navigator url="/pages/officeList/officeList" open-type="navigate" class="nav-btn active" hover-class="nav-hover">
+      <view class="matrix-btn user">
+        <icon class="user"/>
+        <view class="title">科室挂号</view>
+        <view class="info">分科分室 对症下药</view>
+      </view>
+    </navigator>
+  </view>
+  <!--matrix end-->
+  <view class='activity'>
+    <navigator url="/pages/hospital/hospital?hospitalId={{hospitalId1}}" open-type="navigate" hover-class="nav-hover">
+      <view class="index-bd">昌平中医院</view>
+    </navigator>
+    <navigator url="/pages/hospital/hospital?hospitalId={{hospitalId2}}" open-type="navigate" hover-class="nav-hover">
+      <view class="index-bd">昌平区医院</view>
+    </navigator>
+  </view>
+  <template is="foot" />
+  <view class="phone" bindtap="onMakePhone"></view>
+</view>

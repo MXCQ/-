@@ -1,0 +1,22 @@
+<import src="../public.wxml"/>
+<view class="index">
+  <view class="index-hd">
+    <open-data type="userAvatarUrl"></open-data>
+    <view class="index-desc">昵称:<open-data type="userNickName"></open-data>    性别：<open-data type="userGender"></open-data></view>
+  </view>
+  <view class="index-bd">
+    <view id="" class="kind-list-item-hd {{open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+      <view class="kind-list-text">我的预约</view>
+        <image class="kind-list-img" src="../../images/view.png"></image>
+    </view>
+    <view class="kind-list-item-bd {{open ? 'kind-list-item-bd-show' : ''}}">
+      <view class="navigator-box {{open ? 'navigator-box-show' : ''}}">
+        <block wx:for-items="{{registers}}" wx:key="index">
+          <view class="navigator-arrow">时间：{{item.date.year}}-{{item.date.month}}-{{item.date.day}}-{{item.time}}  医生：{{item.doctorId}}  医院：{{item.hospital}}  科室：{{item.office}}</view>
+          <button class="button" bindtap="cancel" data-id='{{item._id}}'>取消挂号</button>
+        </block>
+      </view>
+     </view>
+  </view>
+</view>
+<template is="foot"/>

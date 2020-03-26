@@ -1,0 +1,37 @@
+<import src="../public.wxml"/>
+<view class="index-hd">
+  <image class="index-logo" src="../../images/1.png"></image>
+  <view class="index-desc">姓名：{{information.name}}，专长：{{information.major}}，科室：{{information.office}}，所属医院：{{information.hospital}}，级别：{{information.level}}</view>
+</view>  
+<scroll-view  class="scroll-header" scroll-x="true">
+  <view id="block1" class="scroll-view-item">
+    <view class="TimeOrderBox"></view>
+    <view wx:for="{{dayList}}" wx:for-index="index" wx:key="index" class="TimeOrderBox bc_red {{id == index ? 'coloBack':''}}" id="{{index}}" bindtap="ItemDate" data-selectTime="{{item.month}}/{{item.day}}" data-week="{{item.week}}">
+      <text class="TimeOrder">{{item.month}}-{{item.day}}</text>
+      <text class="TimeOrder">星期{{item.week}}</text>
+    </view>
+  </view>
+  <view style='height:10rpx'></view>
+  <view id="block2" class="scroll-view-item">
+    <view class="TimeOrderBox"><text class="TimeOrderText">上午</text></view>
+    <view wx:for="{{availtime_am}}" wx:for-index="index" wx:key="index" class="TimeOrderBox bc_red {{id == index ? 'coloBack':''}}" id="{{index}}">
+        <text class="TimeOrderText" wx:if="{{flag_am[index]}}">已有预约</text>
+<button class="button-use" data-index="{{index}}" bindtap='register_am' wx:elif="{{item}}">
+        <text class="TimeOrderText" >余号：{{item}}</text>
+      </button>
+      <text class="TimeOrderText" wx:else>无号</text>
+    </view>
+  </view>
+  <view style='height:10rpx'></view>
+  <view id="block3" class="scroll-view-item">
+    <view class="TimeOrderBox"><text class="TimeOrderText">下午</text></view>
+    <view wx:for="{{availtime_pm}}" wx:for-index="index" wx:key="index" class="TimeOrderBox bc_red {{id == index ? 'coloBack':''}}" id="{{index}}">
+       <text class="TimeOrderText" wx:if="{{flag_pm[index]}}">已有预约</text>
+<button class="button-use" data-index="{{index}}" bindtap='register_pm' wx:elif="{{item}}">
+          <text class="TimeOrderText" >余号：{{item}}</text>
+      </button>
+      <text class="TimeOrderText" wx:else>无号</text>
+    </view>
+  </view>
+</scroll-view>
+<template is="foot"/>
